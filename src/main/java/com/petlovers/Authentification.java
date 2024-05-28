@@ -25,8 +25,9 @@ public class Authentification {
         Transaction transaction = session.beginTransaction();
 
         Query query = session.createQuery(
-            "from UserData u where u.email = " + user.toString()
+            "from UserData u where u.email = :user"
         );
+        query.setParameter("user", user.toString());
         // Chama a query
         List<UserData> users = query.list();
 

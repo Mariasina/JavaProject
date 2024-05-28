@@ -29,13 +29,16 @@ public class LoginPageController{
     @FXML
     protected TextField tfUserEmail;
     @FXML
-    protected PasswordField pfUserPass;
+    protected PasswordField psUserPass;
 
-   
     @FXML
     protected void tryLogin(ActionEvent e) throws Exception {
+
+        tfUserEmail.setText("maria@gmail.com");
+        psUserPass.setText("123");
+
         Authentification auth = Authentification.tryLogin(
-            tfUserEmail.getText(), pfUserPass.getText()
+            tfUserEmail.getText(), psUserPass.getText()
         );
         if (!auth.userExists()) {
             Alert alert = new Alert(
@@ -55,5 +58,7 @@ public class LoginPageController{
             alert.showAndWait();
             return;
         }
+
+        
     }
 }
