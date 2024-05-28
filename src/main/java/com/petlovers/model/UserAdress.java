@@ -7,8 +7,8 @@ import javax.persistence.*;
 public class UserAdress {
     @Id
     @GeneratedValue
-
     private Long user_adress_id;
+    
     @Column(name = "street")
     private String street;
 
