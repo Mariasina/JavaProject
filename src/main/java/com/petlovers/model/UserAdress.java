@@ -7,8 +7,8 @@ import javax.persistence.*;
 public class UserAdress {
     @Id
     @GeneratedValue
-    private Long user_adress_id;
-    
+    private Long id;
+
     @Column(name = "street")
     private String street;
 
@@ -31,11 +31,11 @@ public class UserAdress {
     private String cep;
 
     public Long getUserAdressId() {
-        return user_adress_id;
+        return id;
     }
 
-    public void setUserAdressId(Long user_adress_id) {
-        this.user_adress_id = user_adress_id;
+    public void setUserAdressId(Long id) {
+        this.id = id;
     }
 
     public String getStreet() {
