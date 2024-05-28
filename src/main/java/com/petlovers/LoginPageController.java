@@ -15,7 +15,7 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
-public class LoginPageController {
+public class LoginPageController{
     public static Scene CreateScene() throws Exception {
         URL sceneUrl = LoginPageController.class
         .getResource("login-page.fxml");
@@ -30,9 +30,10 @@ public class LoginPageController {
     protected TextField tfUserEmail;
     @FXML
     protected PasswordField pfUserPass;
+
    
     @FXML
-    protected void submit(ActionEvent e) throws Exception {
+    protected void tryLogin(ActionEvent e) throws Exception {
         Authentification auth = Authentification.tryLogin(
             tfUserEmail.getText(), pfUserPass.getText()
         );
