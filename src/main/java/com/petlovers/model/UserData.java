@@ -8,7 +8,7 @@ import javax.persistence.*;
 public class UserData {
     @Id
     @GeneratedValue
-    private Long user_id;
+    private Long id;
 
     @Column(name = "username")
     private String username;
@@ -35,12 +35,6 @@ public class UserData {
     @JoinColumn(name = "user_adress_id") 
     private UserAdress user_adress;
 
-    public Long getId() {
-        return this.user_id;
-    }
-    public void setId(Long value) {
-        this.user_id = value;
-    }
     public String getUsername() {
         return this.username;
     }
@@ -48,10 +42,10 @@ public class UserData {
         this.username = value;
     }
     public Long getUserId() {
-        return user_id;
+        return id;
     }
-    public void setUserId(Long user_id) {
-        this.user_id = user_id;
+    public void setUserId(Long id) {
+        this.id = id;
     }
     public String getPassword() {
         return password;

@@ -62,7 +62,7 @@ public class LoginPageController{
         Stage currentStage = (Stage)tfUserEmail.getScene().getWindow();
         currentStage.close();
 
-        Scene scene = RegisterPageController.CreateScene();
+        Scene scene = InitialPageController.CreateScene();
 
         Stage stage = new Stage();
         stage.setScene(scene);
