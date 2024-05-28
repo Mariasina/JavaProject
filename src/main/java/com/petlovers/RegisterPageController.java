@@ -41,7 +41,7 @@ public class RegisterPageController {
     @FXML
     protected void tryRegister(ActionEvent e) throws Exception {
         Register register = Register.tryRegister(
-            tfUserEmail.getText(), psUserPass.getText()
+            tfFullName.getText(), tfUserName.getText(), dpBirthDate.getValue().getYear(), tfUserCPF.getText(), psUserPass.getText(), tfUserEmail.getText(), tfUserPhone.getText()
         );
     }
 }
