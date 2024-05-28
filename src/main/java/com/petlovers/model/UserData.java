@@ -31,7 +31,7 @@ public class UserData {
     @Column(name = "phone")
     private String phone;
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "user_adress_id") 
     private UserAdress user_adress;
 
