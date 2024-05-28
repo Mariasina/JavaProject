@@ -59,6 +59,13 @@ public class LoginPageController{
             return;
         }
 
-        
+        Stage currentStage = (Stage)tfUserEmail.getScene().getWindow();
+        currentStage.close();
+
+        Scene scene = RegisterPageController.CreateScene();
+
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.show();
     }
 }
