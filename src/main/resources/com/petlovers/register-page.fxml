@@ -5,6 +5,8 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Rectangle?>
@@ -66,8 +68,13 @@
                   <Font name="Bosch Sans Regular" size="14.0" />
                </font>
             </Label>
-            <PasswordField id="tfUserPhone" fx:id="tfUserPhone" layoutX="345.0" layoutY="533.0" prefHeight="34.0" prefWidth="182.0" />
             <TextField id="tfUserEmail" fx:id="tfUserEmail" layoutX="765.0" layoutY="439.0" prefHeight="34.0" prefWidth="182.0" />
+            <ImageView fitHeight="154.0" fitWidth="252.0" layoutX="515.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Downloads/Pet-removebg-preview.png" />
+               </image>
+            </ImageView>
+            <TextField id="tfUserPhone" fx:id="tfUserPhone" layoutX="345.0" layoutY="533.0" prefHeight="34.0" prefWidth="182.0" />
          </children>
       </Pane>
    </children>
