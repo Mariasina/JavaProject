@@ -68,4 +68,16 @@ public class LoginPageController{
         stage.setScene(scene);
         stage.show();
     }
+
+    @FXML
+    protected void goToRegisterPage(ActionEvent e) throws Exception{
+        Stage currentStage = (Stage)tfUserEmail.getScene().getWindow();
+        currentStage.close();
+
+        Scene scene = RegisterPageController.CreateScene();
+
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.show(); 
+    }
 }
