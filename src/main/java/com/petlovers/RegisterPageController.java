@@ -2,6 +2,7 @@ package com.petlovers;
 
 import java.net.URL;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -27,7 +28,7 @@ public class RegisterPageController {
     @FXML
     protected TextField tfUserName;
     @FXML
-    protected DatePicker dpBithDate;
+    protected DatePicker dpBirthDate;
     @FXML
     protected TextField tfUserCPF;
     @FXML
@@ -36,4 +37,11 @@ public class RegisterPageController {
     protected TextField tfUserEmail;
     @FXML
     protected TextField tfUserPhone;
+
+    @FXML
+    protected void tryRegister(ActionEvent e) throws Exception {
+        Register register = Register.tryRegister(
+            tfUserEmail.getText(), psUserPass.getText()
+        );
+    }
 }
