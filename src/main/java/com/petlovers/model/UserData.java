@@ -1,6 +1,5 @@
 package com.petlovers.model;
 
-import java.sql.Date;
 import javax.persistence.*;
 
 @Entity
@@ -23,7 +22,7 @@ public class UserData {
     private String cpf;
 
     @Column(name = "birthdate")
-    private Date birthdate;
+    private String birthdate;
 
     @Column(name = "email")
     private String email;
@@ -65,10 +64,10 @@ public class UserData {
     public void setCpf(String cpf) {
         this.cpf = cpf;
     }
-    public Date getBirthdate() {
+    public String getBirthdate() {
         return birthdate;
     }
-    public void setBirthdate(Date birthdate) {
+    public void setBirthdate(String birthdate) {
         this.birthdate = birthdate;
     }
     public String getEmail() {

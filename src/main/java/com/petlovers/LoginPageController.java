@@ -34,8 +34,8 @@ public class LoginPageController{
     @FXML
     protected void tryLogin(ActionEvent e) throws Exception {
 
-        tfUserEmail.setText("maria@gmail.com");
-        psUserPass.setText("123");
+        // tfUserEmail.setText("maria@gmail.com");
+        // psUserPass.setText("123");
 
         Authentification auth = Authentification.tryLogin(
             tfUserEmail.getText(), psUserPass.getText()
