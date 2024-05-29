@@ -38,10 +38,10 @@ public class RegisterPageController {
     @FXML
     protected TextField tfUserPhone;
 
-    @FXML
-    protected void tryRegister(ActionEvent e) throws Exception {
-        Register register = Register.tryRegister(
-            tfUserEmail.getText(), psUserPass.getText()
-        );
-    }
+    // @FXML
+    // protected void tryRegister(ActionEvent e) throws Exception {
+    //     Register register = Register.tryRegister(
+    //         tfUserEmail.getText(), psUserPass.getText()
+    //     );
+    // }
 }
