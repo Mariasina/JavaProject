@@ -16,9 +16,6 @@ public class Register {
         .getCurrentSession();
         Transaction transaction = session.beginTransaction();
 
-        // Query query = session.createQuery(
-        //     "insert into UserData (u.bithdate, u.cpf, u.email, u.full_name, u.password, u.phone, u.username, u.user_adress_id) = :birthdate, :cpf, :email, :full_name, :password, :phone, :username, 1"
-        // );
         UserData data = new UserData();
         data.setFull_name(full_name);
         data.setUsername(username);
