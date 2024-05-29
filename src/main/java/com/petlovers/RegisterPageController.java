@@ -57,6 +57,4 @@ public class RegisterPageController {
         stage.setScene(scene);
         stage.show();
     }
-
-    
 }

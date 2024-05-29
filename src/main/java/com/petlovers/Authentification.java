@@ -16,7 +16,7 @@ public class Authentification {
     public Boolean userExists() {
         return this.userExists;
     }
-    public static Authentification tryLogin(String user, String pass) {
+    public static Authentification tryLogin(String email, String pass) {
         Authentification auth = new Authentification();
 
         Session session = HibernateUtil
@@ -27,7 +27,7 @@ public class Authentification {
         Query query = session.createQuery(
             "from UserData u where u.email = :user"
         );
-        query.setParameter("user", user.toString());
+        query.setParameter("user", email.toString());
         // Chama a query
         List<UserData> users = query.list();
 
