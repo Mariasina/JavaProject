@@ -11,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class RegisterPageController {
     public static Scene CreateScene() throws Exception {
@@ -40,8 +41,22 @@ public class RegisterPageController {
 
     @FXML
     protected void tryRegister(ActionEvent e) throws Exception {
+        String birthdate = String.valueOf(dpBirthDate.getValue().getDayOfMonth() + "/" + String.valueOf(dpBirthDate.getValue().getMonthValue()) + "/" + String.valueOf(dpBirthDate.getValue().getYear()));
+        System.out.println(birthdate);
+
         Register register = Register.tryRegister(
-            tfFullName.getText(), tfUserName.getText(), dpBirthDate.getValue().getYear(), tfUserCPF.getText(), psUserPass.getText(), tfUserEmail.getText(), tfUserPhone.getText()
+            tfFullName.getText(), tfUserName.getText(), birthdate, tfUserCPF.getText(), psUserPass.getText(), tfUserEmail.getText(), tfUserPhone.getText()
         );
+
+        Stage currentStage = (Stage)tfUserName.getScene().getWindow();
+        currentStage.close();
+
+        Scene scene = LoginPageController.CreateScene();
+
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.show();
     }
+
+    
 }
