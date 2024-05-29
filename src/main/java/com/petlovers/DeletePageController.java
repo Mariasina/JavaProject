@@ -33,10 +33,10 @@ public class DeletePageController {
             tfUserEmail.getText(), psUserPass.getText()
         );
 
+        Scene scene = LoginPageController.CreateScene();
+
         Stage currentStage = (Stage)tfUserEmail.getScene().getWindow();
         currentStage.close();
-
-        Scene scene = LoginPageController.CreateScene();
 
         Stage stage = new Stage();
         stage.setScene(scene);

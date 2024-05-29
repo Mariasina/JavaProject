@@ -34,7 +34,7 @@ public class DeleteUser {
         // Chama a query
         List<UserData> users = query.list();
 
-        transaction.commit();
+        
         if (users.size() == 0)
             return deleteUser;
 
@@ -45,12 +45,13 @@ public class DeleteUser {
             return deleteUser;
 
         Query queryDelete = session.createQuery(
-            "delete from UserData u where u.email = :user"
+            "delete from UserData where email = :email"
         );
-        
+
         deleteUser.user = loggedUser;
+        
+        transaction.commit();
         return deleteUser;
     }
-        
-    // }
+    
 }
