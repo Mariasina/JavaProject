@@ -7,7 +7,7 @@ import com.petlovers.model.AnimalData;
 import com.petlovers.model.UserData;
 
 public class AddAnimal {
-    public static AddAnimal tryAddAnimal(String name, int age, String gender, String description, String type, String breed, UserData owner) {
+    public static AddAnimal tryAddAnimal(int age, String breed, String description, String gender, String name, String type, UserData owner) {
         AddAnimal addAnimal = new AddAnimal();
 
         Session session = HibernateUtil
@@ -16,12 +16,12 @@ public class AddAnimal {
         Transaction transaction = session.beginTransaction();
 
         AnimalData data = new AnimalData();
-        data.setName(name);
         data.setAge(age);
-        data.setGender(gender);
+        data.setBreed(breed); 
         data.setDescription(description);
+        data.setGender(gender);
+        data.setName(name);
         data.setType(type);
-        data.setBreed(breed);
         data.setOwner(owner);
 
         session.save(data);
