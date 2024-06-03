@@ -5,6 +5,8 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
+import com.petlovers.model.AnimalData;
+
 public class EditAnimal {
     public static void editAnimal(String name, int age, String gender, String description, String type, String breed) {
         Configuration configuration = new Configuration().configure();
