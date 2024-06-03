@@ -23,5 +23,6 @@
         <property name="hibernate.hbm2ddl.auto">update</property>
 
         <mapping class="com.petlovers.model.UserData"/>
+        <mapping class="com.petlovers.model.AnimalData"/>
     </session-factory>
 </hibernate-configuration>
