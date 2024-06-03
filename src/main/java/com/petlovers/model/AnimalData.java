@@ -3,7 +3,7 @@ package com.petlovers.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "UserAnimal")
+@Table(name = "AnimalData")
 public class AnimalData {
     @Id
     @GeneratedValue

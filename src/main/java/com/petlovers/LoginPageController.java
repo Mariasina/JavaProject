@@ -34,28 +34,17 @@ public class LoginPageController{
 
     @FXML
     protected void tryLogin(ActionEvent e) throws Exception {
-
-        // tfUserEmail.setText("maria@gmail.com");
-        // psUserPass.setText("123");
-
         Authentification auth = Authentification.tryLogin(
             tfUserEmail.getText(), psUserPass.getText()
         );
+
         if (!auth.userExists()) {
-            Alert alert = new Alert(
-                AlertType.ERROR,
-                "Usuário inexistente.",
-                ButtonType.OK
-            );
+            Alert alert = new Alert(AlertType.ERROR, "Usuário inexistente.", ButtonType.OK);
             alert.showAndWait();
             return;
         }
         if (auth.getUser() == null) {
-            Alert alert = new Alert(
-                AlertType.ERROR,
-                "Senha incorreta.",
-                ButtonType.OK
-            );
+            Alert alert = new Alert(AlertType.ERROR, "Senha incorreta.", ButtonType.OK);
             alert.showAndWait();
             return;
         }
@@ -63,7 +52,8 @@ public class LoginPageController{
         Stage currentStage = (Stage)tfUserEmail.getScene().getWindow();
         currentStage.close();
 
-        Scene scene = InitialPageController.CreateScene(user);
+        // Passa o usuário logado para o InitialPageController
+        Scene scene = InitialPageController.CreateScene(auth.getUser());
 
         Stage stage = new Stage();
         stage.setScene(scene);
