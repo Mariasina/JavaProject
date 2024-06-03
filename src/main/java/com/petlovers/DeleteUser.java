@@ -15,6 +15,7 @@ public class DeleteUser {
     public UserData getUser() {
         return this.user;
     }
+    
     public Boolean userExists() {
         return this.userExists;
     }
@@ -23,18 +24,16 @@ public class DeleteUser {
         DeleteUser deleteUser = new DeleteUser();
 
         Session session = HibernateUtil
-        .getSessionFactory()
-        .getCurrentSession();
+            .getSessionFactory()
+            .getCurrentSession();
         Transaction transaction = session.beginTransaction();
 
         Query query = session.createQuery(
             "from UserData u where u.email = :user"
         );
-        query.setParameter("user", email.toString());
-        // Chama a query
+        query.setParameter("user", email);
         List<UserData> users = query.list();
 
-        
         if (users.size() == 0)
             return deleteUser;
 
@@ -44,14 +43,12 @@ public class DeleteUser {
         if (!loggedUser.getPassword().equals(pass))
             return deleteUser;
 
-        Query queryDelete = session.createQuery(
-            "delete from UserData where email = :email"
-        );
-
-        deleteUser.user = loggedUser;
+        session.delete(loggedUser);
         
+        deleteUser.user = loggedUser;
+
         transaction.commit();
         return deleteUser;
     }
-    
 }
+
