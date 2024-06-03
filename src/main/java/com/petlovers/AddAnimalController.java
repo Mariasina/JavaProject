@@ -57,7 +57,7 @@ public class AddAnimalController {
     @FXML
     protected void tryAddAnimal(ActionEvent e) throws Exception {
         AddAnimal addAnimal = AddAnimal.tryAddAnimal(
-            tfPetName.getText(), Integer.parseInt(tfPetAge.getText()), tfPetType.getText(), tfPetBreed.getText(), tfPetGender.getText(), tfPetDescription.getText(), user
+            Integer.parseInt(tfPetAge.getText()), tfPetBreed.getText(), tfPetDescription.getText(), tfPetGender.getText(), tfPetName.getText(), tfPetType.getText(), user
         );
 
         Stage currentStage = (Stage)tfPetName.getScene().getWindow();

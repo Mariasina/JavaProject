@@ -8,24 +8,24 @@ public class AnimalData {
     @Id
     @GeneratedValue
     private Long id;
+    
+    @Column(name = "age")
+    private int age;
+
+    @Column(name = "breed")
+    private String breed;
+
+    @Column(name = "description")
+    private String description;
+    
+    @Column(name = "gender")
+    private String gender;
 
     @Column(name = "name")
     private String name;
 
-    @Column(name = "age")
-    private int age;
-
-    @Column(name = "gender")
-    private String gender;
-
-    @Column(name = "description")
-    private String description;
-
     @Column(name = "type")
     private String type;
-
-    @Column(name = "breed")
-    private String breed;
 
     @ManyToOne
     @JoinColumn(name = "owner") 
