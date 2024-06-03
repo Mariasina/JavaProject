@@ -14,6 +14,7 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import com.petlovers.model.UserData;
 
 public class LoginPageController{
     public static Scene CreateScene() throws Exception {
@@ -49,7 +50,7 @@ public class LoginPageController{
             alert.showAndWait();
             return;
         }
-            if (auth.getUser() == null) {
+        if (auth.getUser() == null) {
             Alert alert = new Alert(
                 AlertType.ERROR,
                 "Senha incorreta.",
@@ -62,7 +63,7 @@ public class LoginPageController{
         Stage currentStage = (Stage)tfUserEmail.getScene().getWindow();
         currentStage.close();
 
-        Scene scene = InitialPageController.CreateScene();
+        Scene scene = InitialPageController.CreateScene(user);
 
         Stage stage = new Stage();
         stage.setScene(scene);

@@ -1,7 +1,7 @@
 package com.petlovers;
 
 import java.net.URL;
-
+import com.petlovers.model.UserData;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.application.Application;
@@ -16,9 +16,9 @@ import org.hibernate.cfg.Configuration;
 import java.util.List;
 
 
-public class InitialPageController extends Application{
-    // privateTableView<>
-    public static Scene CreateScene() throws Exception {
+public class InitialPageController {
+
+    public static Scene CreateScene(UserData user) throws Exception {
         URL sceneUrl = InitialPageController.class
         .getResource("initial-page.fxml");
         Parent root = FXMLLoader.load(sceneUrl);
