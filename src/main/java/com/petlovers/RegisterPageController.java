@@ -38,6 +38,10 @@ public class RegisterPageController {
     protected TextField tfUserEmail;
     @FXML
     protected TextField tfUserPhone;
+    @FXML
+    protected TextField tfCity;
+    @FXML
+    protected TextField tfState;
 
     @FXML
     protected void tryRegister(ActionEvent e) throws Exception {
@@ -45,7 +49,7 @@ public class RegisterPageController {
         System.out.println(birthdate);
 
         Register register = Register.tryRegister(
-            tfFullName.getText(), tfUserName.getText(), birthdate, tfUserCPF.getText(), psUserPass.getText(), tfUserEmail.getText(), tfUserPhone.getText()
+            tfFullName.getText(), tfUserName.getText(), birthdate, tfUserCPF.getText(), psUserPass.getText(), tfUserEmail.getText(), tfUserPhone.getText(), tfCity.getText(), tfState.getText()
         );
 
         Stage currentStage = (Stage)tfUserName.getScene().getWindow();

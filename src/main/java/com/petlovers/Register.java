@@ -8,7 +8,7 @@ import org.hibernate.Transaction;
 import com.petlovers.model.UserData;
 
 public class Register {
-    public static Register tryRegister(String full_name, String username, String birthdate, String cpf, String password, String email, String phone) {
+    public static Register tryRegister(String full_name, String username, String birthdate, String cpf, String password, String email, String phone, String city,String state) {
         Register register = new Register();
 
         Session session = HibernateUtil
@@ -24,6 +24,8 @@ public class Register {
         data.setPassword(password);
         data.setEmail(email);
         data.setPhone(phone);
+        data.setCity(city);
+        data.setState(state);
 
         session.save(data);
 

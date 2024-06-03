@@ -30,9 +30,11 @@ public class UserData {
     @Column(name = "phone")
     private String phone;
 
-    @OneToOne
-    @JoinColumn(name = "user_adress_id") 
-    private UserAdress user_adress;
+    @Column(name = "city")
+    private String city;
+
+    @Column(name = "state")
+    private String state;
 
     public String getUsername() {
         return this.username;
@@ -82,11 +84,10 @@ public class UserData {
     public void setPhone(String phone) {
         this.phone = phone;
     }
-    public UserAdress getUserAdress() {
-        return user_adress;
+    public void setCity(String city) {
+        this.city = city;
     }
-    public void setUserAdress(UserAdress user_adress) {
-        this.user_adress = user_adress;
+    public void setState(String state) {
+        this.state = state;
     }
-    
 }

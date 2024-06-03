@@ -11,7 +11,7 @@ public class App extends Application{
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Scene scene = DeletePageController.CreateScene();
+        Scene scene = RegisterPageController.CreateScene();
         primaryStage.setScene(scene);
         primaryStage.show();
     }
