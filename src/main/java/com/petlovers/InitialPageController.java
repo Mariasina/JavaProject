@@ -47,6 +47,8 @@ public class InitialPageController {
 
     @FXML
     protected Button btCadAnimal;
+    @FXML
+    protected Button btDelUser;
 
     @FXML
     protected void goToAddAnimalPage(ActionEvent e) throws Exception{
@@ -54,6 +56,18 @@ public class InitialPageController {
         currentStage.close();
 
         Scene scene = AddAnimalController.CreateScene(user);
+
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.show(); 
+    }
+
+    @FXML
+    protected void goToDeletePage(ActionEvent e) throws Exception{
+        Stage currentStage = (Stage)btCadAnimal.getScene().getWindow();
+        currentStage.close();
+
+        Scene scene = DeletePageController.CreateScene();
 
         Stage stage = new Stage();
         stage.setScene(scene);
