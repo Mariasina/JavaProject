@@ -50,6 +50,7 @@
             </ImageView>
             <Button id="btCadAnimal" fx:id="btCadAnimal" layoutX="1159.0" layoutY="26.0" mnemonicParsing="false" onAction="#goToAddAnimalPage" text="Cadastrar Animal" />
             <Button id="btDelUser" fx:id="btDelUser" layoutX="1055.0" layoutY="26.0" mnemonicParsing="false" onAction="#goToDeletePage" text="Deletar conta" />
+            <Button id="btEditPet" fx:id="btEditPet" layoutX="950.0" layoutY="26.0" mnemonicParsing="false" onAction="#goToEditPetPage" text="Editar Animal" />
          </children></Pane>
    </children>
 </VBox>

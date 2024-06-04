@@ -29,7 +29,6 @@ public class InitialPageController {
         FXMLLoader loader = new FXMLLoader(sceneUrl);
         Parent root = loader.load();
         
-        // Acessa o controlador e define o usuário logado
         InitialPageController controller = loader.getController();
         controller.setUser(user);
         
@@ -49,6 +48,8 @@ public class InitialPageController {
     protected Button btCadAnimal;
     @FXML
     protected Button btDelUser;
+    @FXML
+    protected Button btEditPet;
 
     @FXML
     protected void goToAddAnimalPage(ActionEvent e) throws Exception{
@@ -68,6 +69,18 @@ public class InitialPageController {
         currentStage.close();
 
         Scene scene = DeletePageController.CreateScene();
+
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.show(); 
+    }
+
+    @FXML
+    protected void goToEditPetPage(ActionEvent e) throws Exception{
+        Stage currentStage = (Stage)btCadAnimal.getScene().getWindow();
+        currentStage.close();
+
+        Scene scene = EditPetPageController.CreateScene(user);
 
         Stage stage = new Stage();
         stage.setScene(scene);

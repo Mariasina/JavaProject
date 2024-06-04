@@ -15,7 +15,7 @@
       <Pane prefHeight="784.0" prefWidth="1294.0">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#9ce0db" height="498.0" layoutX="212.0" layoutY="142.0" stroke="RED" strokeType="INSIDE" strokeWidth="0.0" width="870.0" />
-            <Button id="btCadPet" fx:id="btCadPet" layoutX="937.0" layoutY="574.0" mnemonicParsing="false" onAction="#tryAddAnimal" prefHeight="34.0" prefWidth="104.0" text="Editar">
+            <Button id="btCadPet" fx:id="btCadPet" layoutX="937.0" layoutY="574.0" mnemonicParsing="false" onAction="#editAnimal" prefHeight="34.0" prefWidth="104.0" text="Editar">
                <font>
                   <Font name="Bosch Sans Bold" size="14.0" />
                </font>

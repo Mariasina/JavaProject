@@ -2,6 +2,7 @@ package com.petlovers;
 
 import java.net.URL;
 
+import com.petlovers.model.AnimalData;
 import com.petlovers.model.UserData;
 
 import javafx.event.ActionEvent;
@@ -16,6 +17,7 @@ import javafx.scene.control.TextArea;
 
 public class EditPetPageController {
     private UserData user;
+    private AnimalData pet;
 
     public static Scene CreateScene(UserData user) throws Exception {
         URL sceneUrl = EditPetPageController.class
@@ -56,8 +58,11 @@ public class EditPetPageController {
 
     @FXML
     protected void editAnimal(ActionEvent e) throws Exception {
+        long id = 1;
+        AnimalData editPet = new AnimalData();
+        editPet.setId(id);
         EditAnimal.editAnimal(
-            tfPetName.getText(), Integer.parseInt(tfPetAge.getText()), tfPetType.getText(), tfPetBreed.getText(), tfPetGender.getText(), tfPetDescription.getText()
+            tfPetName.getText(), Integer.parseInt(tfPetAge.getText()), tfPetType.getText(), tfPetBreed.getText(), tfPetGender.getText(), tfPetDescription.getText(), editPet
         );
 
         Stage currentStage = (Stage)tfPetName.getScene().getWindow();
