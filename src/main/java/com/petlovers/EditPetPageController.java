@@ -59,10 +59,9 @@ public class EditPetPageController {
     @FXML
     protected void editAnimal(ActionEvent e) throws Exception {
         long id = 1;
-        AnimalData editPet = new AnimalData();
-        editPet.setId(id);
+    
         EditAnimal.editAnimal(
-            tfPetName.getText(), Integer.parseInt(tfPetAge.getText()), tfPetType.getText(), tfPetBreed.getText(), tfPetGender.getText(), tfPetDescription.getText(), editPet
+            tfPetName.getText(), Integer.parseInt(tfPetAge.getText()), tfPetType.getText(), tfPetBreed.getText(), tfPetGender.getText(), tfPetDescription.getText(), id
         );
 
         Stage currentStage = (Stage)tfPetName.getScene().getWindow();
